@@ -160,6 +160,17 @@ input:focus,
 select:focus {
   border-color: #26a69a;
   box
+
+    .result {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border-left: 4px solid #66bb6a;
+  font-weight: bold;
+  border-radius: 6px;
+  text-align: center;
+}
 </style>
 
 </head>
@@ -191,9 +202,11 @@ select:focus {
 </div>
 
 
-    {% if result %}
-        <h3>{{ result }}</h3>
-    {% endif %}
+
+
+{% if result %}
+  <div class="result">{{ result }}</div>
+{% endif %}
 
 
 </body>
