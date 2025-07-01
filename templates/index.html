@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liver Disease Prediction</title>
+    <style>
+        body { font-family: Arial, background: #f2f9f1; padding: 20px; }
+        form { background: #fff; padding: 20px; width: 400px; margin: auto; border-radius: 8px; box-shadow: 0 0 12px rgba(0,0,0,0.1); }
+        input, select { margin: 10px 0; padding: 10px; width: 100%; }
+        input[type="submit"] { background: #388e3c; color: white; border: none; }
+        h2 { text-align: center; color: #2e7d32; }
+        h3 { text-align: center; margin-top: 20px; color: #00796b; }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle at top left, #111c2a, #040b11);
+    color: #e0f7fa;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  form {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 40px;
+    width: 480px;
+    box-shadow: 0 0 60px rgba(0, 255, 255, 0.1);
+    border-radius: 16px;
+    animation: fadeIn 1.2s ease;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #00ffff;
+    text-shadow: 0 0 8px #00ffff80;
+  }
+
+  input, select {
+    display: block;
+    width: 100%;
+    margin: 12px 0;
+    padding: 12px;
+    background: #0f1923;
+    border: 1px solid #00ffff40;
+    color: #e0f7fa;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+  }
+
+  input:focus, select:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 10px #00ffff60;
+  }
+
+  input[type="submit"] {
+    background: #00ffff;
+    color: #111;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  input[type="submit"]:hover {
+    background: #00e0e0;
+    box-shadow: 0 0 15px #00ffff88;
+  }
+
+  h3 {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 1.2em;
+    color: #66ffe0;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+    .disclaimer {
+  margin-top: 30px;
+  font-size: 0.85em;
+  color: #aaa;
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid #444;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+</head>
+<body>
+
+    <h2>🧬 AI based Liver Disease predictor</h2>
+
+    <form method="POST" action="/predict">
+        <input type="number" name="age" placeholder="Age" step="1" required>
+        <select name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="0">Male</option>
+            <option value="1">Female</option>
+        </select>
+        <input type="number" name="total_bilirubin" placeholder="Total Bilirubin" step="0.01" required>
+        <input type="number" name="direct_bilirubin" placeholder="Direct Bilirubin" step="0.01" required>
+        <input type="number" name="alk_phos" placeholder="Alkaline Phosphotase" required>
+        <input type="number" name="alt" placeholder="Alamine Aminotransferase" required>
+        <input type="number" name="ast" placeholder="Aspartate Aminotransferase" required>
+        <input type="number" name="proteins" placeholder="Total Proteins" step="0.1" required>
+        <input type="number" name="albumin" placeholder="Albumin" step="0.1" required>
+        <input type="number" name="ag_ratio" placeholder="Albumin and Globulin Ratio" step="0.1" required>
+        <input type="submit" value="Predict">
+    </form>
+
+    <!-- Disclaimer goes here -->
+<div class="disclaimer">
+  🛡️ <strong>Disclaimer:</strong> This web app is not a substitute for professional medical guidance. Please consult a licensed Doctor for any health concerns.
+</div>
+
+
+    {% if result %}
+        <h3>{{ result }}</h3>
+    {% endif %}
+
+
+</body>
+</html>
