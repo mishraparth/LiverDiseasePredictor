@@ -93,17 +93,73 @@
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
-    .disclaimer {
-  margin-top: 30px;
-  font-size: 0.85em;
-  color: #aaa;
+   .disclaimer {
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #333;  /* darker text for better contrast */
   text-align: center;
-  padding-top: 10px;
-  border-top: 1px solid #444;
   max-width: 480px;
-  margin-left: auto;
-  margin-right: auto;
+  padding-top: 12px;
+  border-top: 1px solid #999;
+  background-color: #fffbe6;  /* soft yellow background */
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
 }
+
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #edf5f8, #d1ebf3);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+}
+
+h2 {
+  margin: 20px 0 10px;
+  color: #00796b;
+  text-align: center;
+}
+
+form {
+  background: #ffffffcc;
+  backdrop-filter: blur(6px);
+  border: 1px solid #cce7ea;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #b2dfdb;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f9fcfd;
+  color: #333;
+  transition: 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #26a69a;
+  box
 </style>
 
 </head>
@@ -131,7 +187,7 @@
 
     <!-- Disclaimer goes here -->
 <div class="disclaimer">
-  🛡️ <strong>Disclaimer:</strong> This web app is not a substitute for professional medical guidance. Please consult a licensed Doctor for any health concerns.
+  🛡️ <strong>Disclaimer:</strong> This web app is not a substitute for professional medical guidance. Please consult a licensed physician for any health concerns.
 </div>
 
 
